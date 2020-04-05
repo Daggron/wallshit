@@ -1,0 +1,9 @@
+.ViewBox{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: #e6891d;
+    top:20%;
+    left: 50%;
+    transform: translate(-50%);
+}
