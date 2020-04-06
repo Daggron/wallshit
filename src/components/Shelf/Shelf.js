@@ -6,7 +6,7 @@ export default function Shelf(props) {
 
     return (
         <div className={Style.shelf}>
-            <img srcSet={urls.full} src={urls.full} alt={alt_description} />
+            <img  src={urls.full} srcSet={`${urls.full} 100w , ${urls.small} 70w , ${urls.thumb} 100w`}  alt={alt_description} />
         </div>
     )
 }

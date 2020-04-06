@@ -1,0 +1,15 @@
+.button{
+    width: 90vw;
+    margin: 5vw;
+    text-align: center;
+    height: 50px;
+    border-top: 1px solid rgb(63, 63, 245);
+    border-bottom: 1px solid rgb(63, 63, 245);
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: white;
+    color: rgb(63, 63, 245);
+    font-size: 15px;
+    cursor: pointer;
+}

@@ -1,11 +1,10 @@
 .shelf {
     width: 30%;
-    margin: 5%;
 }
 
 .shelf img{
-    width: 100%;
-    margin: 5%;
+    width: 70%;
+    margin: 3%;
     border-radius: 10px;
     cursor: pointer;
 }

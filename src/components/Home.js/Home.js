@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { FetchImages } from "../../utils/httpHandler";
 import Shelf from '../Shelf/Shelf';
+import style from './Home.module.css';
 import '../../App.css'
 
 const Home = () =>{
   const [galaxy , setGalaxy] = useState();
+  const [page , setPage] = useState('1');
   
   useEffect(()=>{
-    FetchImages('latest')
+    FetchImages('latest' , page)
     .then(res=>{
-      console.log(res.photos.results)
-      return setGalaxy(res.photos.results);
+      const gal = galaxy || [];
+      gal.push(...res.photos.results);
+      console.log(gal);
+      return setGalaxy(gal);
     })
     .catch(err=>console.log(err));
-  },[]);
+  },[page]);
   
   if(!galaxy) return <p>Loading...</p>
 
@@ -28,6 +32,14 @@ const Home = () =>{
           })
         }
      </div>
+     
+       {galaxy&&(
+         <div>
+            <button onClick={()=>setPage(page+1)} className={style.button}>
+              Load More
+            </button>
+         </div>
+       )}
     </div>
 
   )
